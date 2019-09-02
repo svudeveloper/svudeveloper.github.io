@@ -1,10 +1,151 @@
 <!DOCTYPE html>
-<html>
-<body>
+<html lang="en">
+<head>
 
-<h1>My First Heading</h1>
+<meta charset="UTF-8">
+<title>Nandera Brahmin Community</title>
+<link rel="stylesheet" href="mavo.css">
+<link rel="stylesheet" href="style.css">
+<script src="mavo.js"></script>
 
-<p>My first paragraph.</p>
+</head>
+
+<body mv-app mv-storage="https://www.dropbox.com/s/gkw7vi02dkerihc/invoices.json?dl=0">
+	<script language=JavaScript>
+	var message="Function Disabled!";
+	function clickIE4(){
+	if (event.button==2){
+	alert(message);
+	return false;
+	}
+	}
+
+	function clickNS4(e){
+	if (document.layers||document.getElementById&&!document.all){
+	if (e.which==2||e.which==3){
+	alert(message);
+	return false;
+	}
+	}
+	}
+
+	if (document.layers){
+	document.captureEvents(Event.MOUSEDOWN);
+	document.onmousedown=clickNS4;
+	}
+	else if (document.all&&!document.getElementById){
+	document.onmousedown=clickIE4;
+	}
+
+	document.oncontextmenu=new Function("alert(message);return false")
+	</script>
+<header>
+	<h1><font color="#FFED66"><center>Nandera Brahmin Community</center></font></h1>
+	<img src="mataji.jpg" height="200" width="200"/>
+	<img src="shiv.jpg" style="float: right" height="200" width="200"/>
+	<marquee><a href="https://forms.gle/P1YP5z9EgUQDz9uY9" target="_blank"><b><font color="#FFE6E8">Click Here...Upload Your's</font></b></a></marquee>
+
+</header>
+
+<a href="#" class="show-all">↩ Back to all invoices</a>
+
+<article class="invoice" property="invoice" mv-multiple id="invoice[id]" mv-order="desc">
+	<header>
+		<a href="#invoice[id]" title="Isolate invoice"><h1># <span property="id" mv-expressions="{ }">?</span></h1></a>
+
+	</header>
+
+	<p class="invoice-date">
+		<time property="date">Invoice date</time>
+	</p>
+
+	<article class="recipient">
+		<div property="man">
+			<img property="image" style="float: left"/>
+			<h2 property="name">Recipient name</h2>
+			<address property="address">Recipient address</address>
+		</div>
+	</article>
+
+<section class="services">
+		<div property="services">
+		<!--	<h2 style="float: left" property="description"></h2>
+			<address style="float: right" property="amount"></address>-->
+			<table>
+				<tr>
+				<th><font color="Red">Name :</font></th>
+				<th><address property="amount"></address></th>
+			</tr>
+			<tr>
+			<th><font color="Red">Father's Name :</font></th>
+			<th><address property="fname"></address></th>
+		</tr>
+			<tr>
+			<th><font color="Red">Father's Occupation :</font></th>
+			<th><address property="focu"></address></th>
+		</tr>
+		<tr>
+		<th><font color="Red">Mother's Name :</font></th>
+		<th><address property="mname"></address></th>
+	</tr>
+		<tr>
+		<th><font color="Red">Mother's Occupation :</font></th>
+		<th><address property="mocu"></address></th>
+	</tr>
+	<tr>
+	<th><font color="Red">Date of Birth :</font></th>
+	<th><address property="dob"></address></th>
+</tr>
+<tr>
+<th><font color="Red">Birth Place :</font></th>
+<th><address property="bplace"></address></th>
+</tr>
+<tr>
+<th><font color="Red">Birth Time :</font></th>
+<th><address property="btime"></address></th>
+</tr>
+<tr>
+<th><font color="Red">Address :</font></th>
+<th><address property="add"></address></th>
+</tr>
+<tr>
+<th><font color="Red">Caste :</font></th>
+<th><address property="caste"></address></th>
+</tr>
+<tr>
+<th><font color="Red">Language's Known :</font></th>
+<th><address property="lknown"></address></th>
+</tr>
+<tr>
+<th><font color="Red">Height :</font></th>
+<th><address property="height"></address></th>
+</tr>
+<tr>
+<th><font color="Red">Weight :</font></th>
+<th><address property="weight"></address></th>
+</tr>
+<tr>
+<th><font color="Red">Qualification :</font></th>
+<th><address property="qualification"></address></th>
+</tr>
+<tr>
+<th><font color="Red">Occupation :</font></th>
+<th><address property="occupation"></address></th>
+</tr>
+<tr>
+<th><font color="Red">Sibling's Detail :</font></th>
+<th><address property="sdetail"></address></th>
+</tr>
+			</table>
+	</div>
+</section>
+
+	<section class="notes">
+		<div property="notes"></div>
+
+	</section>
+
+</article>
 
 </body>
 </html>
